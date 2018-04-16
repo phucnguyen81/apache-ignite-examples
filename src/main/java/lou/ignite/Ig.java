@@ -22,6 +22,15 @@ import lou.ignite.util.Base;
  */
 public class Ig extends Base implements AutoCloseable {
 
+    /**
+     * Launch the main ignite node, which should be kept running until JVM
+     * shutdowns.
+     */
+    public static void main(String[] args) {
+        Ig ig = new Ig();
+        addShutdownHook(() -> ig.close());
+    }
+
     private static final String NUMBERS_CACHE_NAME = "Numbers";
 
     private static final String FIBO_CACHE_NAME = "Fibo";
@@ -32,14 +41,14 @@ public class Ig extends Base implements AutoCloseable {
      * Starts the default ignite instance in client mode.
      */
     public static Ig client() {
-        return new Ig("examples/config/lou/lou-client.xml");
+        return new Ig("/lou-client.xml");
     }
 
     /**
      * Starts default ignite instance.
      */
     public Ig() {
-        this("examples/config/lou/lou-ignite.xml");
+        this("/lou-ignite.xml");
     }
 
     /**
