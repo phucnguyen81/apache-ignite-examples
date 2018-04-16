@@ -17,10 +17,10 @@ import lou.ignite.util.Base;
 public class ComputeCallables extends Base {
 
     public static void main(String[] args) {
-        try (Ig ig = new Ig()) {
+        try (Ig ig = Ig.client()) {
             // create jobs as Callable
             Collection<IgniteCallable<Integer>> countCharacters = Arrays
-                .stream("Count characters using callable".split(" "))
+                .stream("One two three four five six seven".split(" "))
                 .<IgniteCallable<Integer>>map(word -> characterCountJob(word))
                 .collect(Collectors.toList());
 
