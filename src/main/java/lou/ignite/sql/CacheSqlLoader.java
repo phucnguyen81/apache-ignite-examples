@@ -28,9 +28,7 @@ public class CacheSqlLoader extends Base {
                 "SELECT p.name, c.name " +
                 " FROM person p, city c " +
                 " WHERE p.city_id = c.id")) {
-
                 println("Query results:");
-
                 while (rs.next())
                     println(">>>    " + rs.getString(1) + ", " + rs.getString(2));
             }
