@@ -11,7 +11,7 @@ import lou.ignite.util.Base;
 public class CollocationRead extends Base {
 
     public static void main(String[] args) {
-        try (Ig ig = new Ig()) {
+        try (Ig ig = Ig.client()) {
             IgniteCache<Integer, String> cache = ig.cacheNumbers();
 
             /* Store keys in cache (values will end up on different cache nodes
