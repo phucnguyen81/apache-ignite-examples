@@ -72,7 +72,7 @@ public class Ig extends Base implements AutoCloseable {
         String igniteHome = System.getenv("IGNITE_HOME");
         if (igniteHome == null)
             throw new IllegalStateException(
-                "IGNITE_HOME environment variable is " + igniteHome);
+                "IGNITE_HOME environment variable is not set");
         if (Files.notExists(Paths.get(igniteHome)))
             throw new IllegalStateException(
                 "IGNITE_HOME not exist at " + igniteHome);
