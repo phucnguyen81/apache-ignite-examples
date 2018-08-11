@@ -1,9 +1,9 @@
 # Description
 
 This folder contains code examples for Apache Ignite.
-The rereferences are from the Apache Ignite Examples on GitHub.
+The rereference sources are from [Apache Ignite Examples](https://github.com/apache/ignite/tree/master/examples).
  
-This folder is a separate Maven project, to start running you simply need
+This is a separate Maven project, to start running you simply need
 to import provided `pom.xml` file into your favourite IDE.
 
 # Usage
